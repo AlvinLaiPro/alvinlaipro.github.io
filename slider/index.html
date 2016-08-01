@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo slider</title>
+		<style>
+			html,body,ul,li{padding: 0;margin: 0;}
+			ul{list-style: none;}
+			h2{
+				font-size: 30px;
+				line-height: 1;
+				text-align: center;
+				margin: 20px auto;
+			}
+			.slider{
+				/*overflow: hidden;*/
+				position: relative;
+				width: 500px;
+				height: 375px;
+				margin: 0 auto;
+			}
+			.slides{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			.slides li{
+				width: 100%;
+			}
+			.slides img{
+				display: block;
+				width: 100%;
+			}
+		</style>
+		<script src="jquery-1.9.0.min.js"></script>
+		 
+	<!--<script src="zepto.js"></script>  -->
+	</head>
+	<body>
+		<h2>Demo1</h2>
+		<div class="slider slider1">
+			<ul class="slides">
+				<li>
+					<img src="slider1.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider2.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider3.jpeg" alt="">
+				</li>
+			</ul>
+		</div>
+		<h2>Demo2</h2>
+		<div class="slider slider2">
+			<ul class="slides">
+				<li>
+					<img src="slider1.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider2.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider3.jpeg" alt="">
+				</li>
+			</ul>
+		</div>
+		<h2>Demo3</h2>
+		<div class="slider slider3">
+			<ul class="slides">
+				<li>
+					<img src="slider1.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider2.jpeg" alt="">
+				</li>
+				<li>
+					<img src="slider3.jpeg" alt="">
+				</li>
+			</ul>
+		</div>
+		<script src="zepto.slide.js"></script>
+		<script>
+			$(function(){
+				
+				$('.slider1').slides({					
+					effect: 'slide', //滑动效果
+					crossfade: true,
+					slideSpeed: 250, //滑动时间间隔
+					fadeSpeed: 250, //渐隐时间间隔
+					container: 'slides', //指定slider的容器
+					generateNextPrev: true,//是否生成prev/next左右导航
+					generatePagination: false //是否生成导航页
+				});
+				$('.slider2').slides({					
+					effect: 'fade', //滑动效果
+					crossfade: true,
+					slideSpeed: 250, //滑动时间间隔
+					fadeSpeed: 250, //渐隐时间间隔
+					container: 'slides', //指定slider的容器
+					generateNextPrev: true,//是否生成prev/next左右导航
+					generatePagination: false //是否生成导航页
+				});
+				$('.slider3').slides({					
+					effect: 'mix', //滑动效果
+					crossfade: true,
+					slideSpeed: 500, //滑动时间间隔
+					fadeSpeed: 250, //渐隐时间间隔
+					container: 'slides', //指定slider的容器
+					generateNextPrev: true,//是否生成prev/next左右导航
+					generatePagination: false, //是否生成导航页
+			        overflowToggle: true
+				});
+				$('.slider4').slides({	
+			        preload: false,
+			        preloadImage: '../images/loading.gif',
+			        container: 'sliderContainer',
+			        generateNextPrev: false,
+			        next: 'next',
+			        prev: 'prev',
+			        pagination: true,
+			        generatePagination: true,       
+			        bindDirectionNav: false, //detect if there is an element to bind the direction
+			        paginationPosition: 'inner',
+			        paginationClass: 'pageNav',
+			        fadeSpeed: 350,
+			        slideSpeed: 350,
+			        start: 1,
+			        effect: 'slide',
+			        crossfade: false,
+			        randomize: false,
+			        play: 0,
+			        pause: 0,
+			        hoverPause: false,
+			        autoHeight: false,
+			        autoHeightSpeed: 350,
+			        bigTarget: false,
+			        overflowToggle: false
+				});
+
+    
+			})
+		</script>
+	</body>
+</html>
